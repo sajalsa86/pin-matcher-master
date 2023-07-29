@@ -44,3 +44,23 @@ document.getElementById('calculator').addEventListener('click', function (event)
     }
 
 });
+
+//pin math
+document.getElementById('verify-pin').addEventListener('click', function () {
+    const generateField = document.getElementById('generate-field');
+    const otp = generateField.value;
+    const displayField = document.getElementById('calc-display-field');
+    const userInput = displayField.value;
+
+    const successNotify = document.getElementById('success-notify');
+    const failerNotify = document.getElementById('failer-notify');
+
+    if (otp === userInput) {
+        successNotify.style.display = 'block';
+        failerNotify.style.display = 'none';
+    }
+    else {
+        failerNotify.style.display = 'block';
+        successNotify.style.display = 'none';
+    }
+});
